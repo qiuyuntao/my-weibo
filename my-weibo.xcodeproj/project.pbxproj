@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F2B5A881BEDDFF100CFC5CB /* TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B5A871BEDDFF100CFC5CB /* TabBar.m */; };
 		5F5995F71BECF1A100A18238 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5995D81BECF1A100A18238 /* DiscoverViewController.m */; };
 		5F5995F81BECF1A100A18238 /* WBRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5995DE1BECF1A100A18238 /* WBRootViewController.m */; };
 		5F5995F91BECF1A100A18238 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5995E41BECF1A100A18238 /* MeViewController.m */; };
@@ -235,6 +236,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F2B5A861BEDDFF100CFC5CB /* TabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBar.h; sourceTree = "<group>"; };
+		5F2B5A871BEDDFF100CFC5CB /* TabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBar.m; sourceTree = "<group>"; };
 		5F5995D71BECF1A100A18238 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
 		5F5995D81BECF1A100A18238 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
 		5F5995DD1BECF1A100A18238 /* WBRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBRootViewController.h; sourceTree = "<group>"; };
@@ -558,6 +561,8 @@
 		5F5995E01BECF1A100A18238 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5F2B5A861BEDDFF100CFC5CB /* TabBar.h */,
+				5F2B5A871BEDDFF100CFC5CB /* TabBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1331,6 +1336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F2B5A881BEDDFF100CFC5CB /* TabBar.m in Sources */,
 				5F5995FA1BECF1A100A18238 /* MessageViewController.m in Sources */,
 				5F5995FD1BECF1A100A18238 /* PortalViewController.m in Sources */,
 				5F5995FB1BECF1A100A18238 /* AppDelegate.m in Sources */,

@@ -12,8 +12,11 @@
 #import "DiscoverViewController.h"
 #import "MeViewController.h"
 #import "UIImage+my_weibo.h"
+#import "TabBar.h" // DIY tabBar
 
 @interface WBRootViewController ()
+
+@property (nonatomic, weak) TabBar *diyTabBar;
 
 @end
 
@@ -23,8 +26,30 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    // DIY tabbar for controller
+    [self initTabBar];
+    
     // init viewController
     [self initView];
+}
+
+// DIY tabbar for controller
+- (void) initTabBar {
+    TabBar *tabBar = [[TabBar alloc] init];
+    tabBar.frame = self.tabBar.bounds;
+    [self.tabBar addSubview:tabBar];
+    self.diyTabBar = tabBar;
+}
+
+
+// delete custom tabBar view
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    for (UIView *view in self.tabBar.subviews) {
+        if ([view isKindOfClass:[UIControl class]]) {
+            [view removeFromSuperview];
+        }
+    }
 }
 
 - (void) initView {
@@ -53,6 +78,7 @@
     vc.tabBarItem.selectedImage = [[UIImage imageWithOS7:selectImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]; // 图片不做任何渲染
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     [self addChildViewController:nav];
+    [self.diyTabBar addTabBarWithItem:vc.tabBarItem];
 }
 
 @end
