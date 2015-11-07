@@ -8,8 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@class TabBar;
+
+
+@protocol TabBarDelegate <NSObject>
+
+- (void)tabBar:(TabBar *)tabBar didSelectFrom:(int)from to:(int)to; // 按钮点击代理事件
+
+@end
+
 @interface TabBar : UIView
 
 - (void)addTabBarWithItem:(UITabBarItem *)item; // DIT tabBar
+
+@property (assign, nonatomic)id <TabBarDelegate>delegate;
 
 @end

@@ -14,7 +14,7 @@
 #import "UIImage+my_weibo.h"
 #import "TabBar.h" // DIY tabBar
 
-@interface WBRootViewController ()
+@interface WBRootViewController () <TabBarDelegate>
 
 @property (nonatomic, weak) TabBar *diyTabBar;
 
@@ -38,6 +38,7 @@
     TabBar *tabBar = [[TabBar alloc] init];
     tabBar.frame = self.tabBar.bounds;
     [self.tabBar addSubview:tabBar];
+    tabBar.delegate = self;
     self.diyTabBar = tabBar;
 }
 
@@ -79,6 +80,10 @@
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     [self addChildViewController:nav];
     [self.diyTabBar addTabBarWithItem:vc.tabBarItem];
+}
+
+- (void)tabBar:(TabBar *)tabBar didSelectFrom:(int)from to:(int)to {
+    self.selectedIndex = to;
 }
 
 @end

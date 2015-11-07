@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5F2B5A881BEDDFF100CFC5CB /* TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B5A871BEDDFF100CFC5CB /* TabBar.m */; };
+		5F2B5A8B1BEDF63C00CFC5CB /* TabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B5A8A1BEDF63C00CFC5CB /* TabBarButton.m */; };
 		5F5995F71BECF1A100A18238 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5995D81BECF1A100A18238 /* DiscoverViewController.m */; };
 		5F5995F81BECF1A100A18238 /* WBRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5995DE1BECF1A100A18238 /* WBRootViewController.m */; };
 		5F5995F91BECF1A100A18238 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5995E41BECF1A100A18238 /* MeViewController.m */; };
@@ -238,6 +239,8 @@
 /* Begin PBXFileReference section */
 		5F2B5A861BEDDFF100CFC5CB /* TabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBar.h; sourceTree = "<group>"; };
 		5F2B5A871BEDDFF100CFC5CB /* TabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBar.m; sourceTree = "<group>"; };
+		5F2B5A891BEDF63C00CFC5CB /* TabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButton.h; sourceTree = "<group>"; };
+		5F2B5A8A1BEDF63C00CFC5CB /* TabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarButton.m; sourceTree = "<group>"; };
 		5F5995D71BECF1A100A18238 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
 		5F5995D81BECF1A100A18238 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
 		5F5995DD1BECF1A100A18238 /* WBRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBRootViewController.h; sourceTree = "<group>"; };
@@ -563,6 +566,8 @@
 			children = (
 				5F2B5A861BEDDFF100CFC5CB /* TabBar.h */,
 				5F2B5A871BEDDFF100CFC5CB /* TabBar.m */,
+				5F2B5A891BEDF63C00CFC5CB /* TabBarButton.h */,
+				5F2B5A8A1BEDF63C00CFC5CB /* TabBarButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1343,6 +1348,7 @@
 				5F5995F71BECF1A100A18238 /* DiscoverViewController.m in Sources */,
 				5F5996011BECF53000A18238 /* UIImage+my_weibo.m in Sources */,
 				5F5995F91BECF1A100A18238 /* MeViewController.m in Sources */,
+				5F2B5A8B1BEDF63C00CFC5CB /* TabBarButton.m in Sources */,
 				5F5995FC1BECF1A100A18238 /* main.m in Sources */,
 				5F5995F81BECF1A100A18238 /* WBRootViewController.m in Sources */,
 			);
