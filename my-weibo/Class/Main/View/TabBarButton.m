@@ -57,6 +57,7 @@
 // set badgeValue
 - (void)setBadgeValue:(NSString *)badgeValue {
     _badgeValue = badgeValue;
+    self.badgeButton.badgeValue = badgeValue;
 }
 
 @end

@@ -32,3 +32,22 @@ my-weibo
 - (void)setHighlighted:(BOOL)highlighted {}
 ```
 
+#### 图片相关 UIImage
+* 拉伸图片
+
+```
+// 拉伸图片
++ (UIImage *)resizeImage:(NSString *)name {
+    UIImage *image = [UIImage imageWithOS7:name];
+    
+    return [image stretchableImageWithLeftCapWidth:image.size.width * 0.5 topCapHeight:image.size.height * 0.5];
+}
+```
+
+#### 计算大小
+* 计算字体占据大小
+
+```
+NSString *badgeValue = @"123";
+CGFloat width = [badgeValue sizeWithAttributes:@{@"NSFontAttributeName": self.titleLabel.font}].width;
+```

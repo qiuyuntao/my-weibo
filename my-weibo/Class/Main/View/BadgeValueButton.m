@@ -15,7 +15,7 @@
     BadgeValueButton *btn = [[BadgeValueButton alloc] init];
     [btn setBackgroundImage:[UIImage resizeImage:@"main_badge"] forState:UIControlStateNormal];
     btn.titleLabel.font = [UIFont systemFontOfSize:11];
-//    btn.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
+    btn.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
     btn.badgeValue = value;
     
     return btn;
@@ -27,7 +27,6 @@
     if (badgeValue) {
         self.hidden = NO;
         [self setTitle:badgeValue forState:UIControlStateNormal];
-        self.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
         CGFloat x = self.superview.frame.size.width * 0.5;
         CGFloat y = 0;
         CGFloat w = self.currentBackgroundImage.size.width;
