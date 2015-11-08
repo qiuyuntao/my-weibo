@@ -1,16 +1,16 @@
 //
-//  TabBarButton.h
+//  BadgeValueButton.h
 //  my-weibo
 //
-//  Created by qyt on 11/7/15.
+//  Created by qyt on 11/8/15.
 //  Copyright © 2015 qyt. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface TabBarButton : UIButton
+@interface BadgeValueButton : UIButton
 
-+ (TabBarButton *)buttonWithItem:(UITabBarItem *)item;
++ (BadgeValueButton *)initWithValue:(NSString *)value;
 
 @property (nonatomic, copy) NSString *badgeValue;
 

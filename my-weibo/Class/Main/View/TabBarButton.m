@@ -7,6 +7,14 @@
 //
 
 #import "TabBarButton.h"
+#import "UIImage+my_weibo.h"
+#import "BadgeValueButton.h"
+
+@interface TabBarButton()
+
+@property (nonatomic, weak) BadgeValueButton *badgeButton;
+
+@end
 
 @implementation TabBarButton
 
@@ -20,6 +28,11 @@
     button.titleLabel.font = [UIFont systemFontOfSize:11];
     button.titleLabel.textAlignment = NSTextAlignmentCenter;
     button.imageView.contentMode = UIViewContentModeCenter;
+    button.badgeValue = item.badgeValue;
+    
+    BadgeValueButton *badgeValueButton = [BadgeValueButton initWithValue:item.badgeValue];
+    [button addSubview:badgeValueButton];
+    button.badgeButton = badgeValueButton;
     
     return button;
 }
@@ -31,7 +44,7 @@
 - (CGRect)imageRectForContentRect:(CGRect)contentRect {
     CGFloat imageW = contentRect.size.width;
     CGFloat imageH = contentRect.size.height * 0.6;
-    return CGRectMake(0, 0, imageW, imageH);
+    return CGRectMake(0, 2, imageW, imageH);
 }
 
 // 自定义文字位置
@@ -39,6 +52,11 @@
     CGFloat titleW = contentRect.size.width;
     CGFloat titleH = contentRect.size.height * 0.4;
     return CGRectMake(0, contentRect.size.height * 0.6, titleW, titleH);
+}
+
+// set badgeValue
+- (void)setBadgeValue:(NSString *)badgeValue {
+    _badgeValue = badgeValue;
 }
 
 @end

@@ -20,4 +20,11 @@
     return image;
 }
 
+// 拉伸图片
++ (UIImage *)resizeImage:(NSString *)name {
+    UIImage *image = [UIImage imageWithOS7:name];
+    
+    return [image stretchableImageWithLeftCapWidth:image.size.width * 0.5 topCapHeight:image.size.height * 0.5];
+}
+
 @end

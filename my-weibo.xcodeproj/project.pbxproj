@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F27C21C1BEF259F00248950 /* BadgeValueButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F27C21B1BEF259F00248950 /* BadgeValueButton.m */; };
 		5F2B5A881BEDDFF100CFC5CB /* TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B5A871BEDDFF100CFC5CB /* TabBar.m */; };
 		5F2B5A8B1BEDF63C00CFC5CB /* TabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B5A8A1BEDF63C00CFC5CB /* TabBarButton.m */; };
 		5F5995F71BECF1A100A18238 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5995D81BECF1A100A18238 /* DiscoverViewController.m */; };
@@ -237,6 +238,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F27C21A1BEF259F00248950 /* BadgeValueButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeValueButton.h; sourceTree = "<group>"; };
+		5F27C21B1BEF259F00248950 /* BadgeValueButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeValueButton.m; sourceTree = "<group>"; };
 		5F2B5A861BEDDFF100CFC5CB /* TabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBar.h; sourceTree = "<group>"; };
 		5F2B5A871BEDDFF100CFC5CB /* TabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBar.m; sourceTree = "<group>"; };
 		5F2B5A891BEDF63C00CFC5CB /* TabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButton.h; sourceTree = "<group>"; };
@@ -568,6 +571,8 @@
 				5F2B5A871BEDDFF100CFC5CB /* TabBar.m */,
 				5F2B5A891BEDF63C00CFC5CB /* TabBarButton.h */,
 				5F2B5A8A1BEDF63C00CFC5CB /* TabBarButton.m */,
+				5F27C21A1BEF259F00248950 /* BadgeValueButton.h */,
+				5F27C21B1BEF259F00248950 /* BadgeValueButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1347,6 +1352,7 @@
 				5F5995FB1BECF1A100A18238 /* AppDelegate.m in Sources */,
 				5F5995F71BECF1A100A18238 /* DiscoverViewController.m in Sources */,
 				5F5996011BECF53000A18238 /* UIImage+my_weibo.m in Sources */,
+				5F27C21C1BEF259F00248950 /* BadgeValueButton.m in Sources */,
 				5F5995F91BECF1A100A18238 /* MeViewController.m in Sources */,
 				5F2B5A8B1BEDF63C00CFC5CB /* TabBarButton.m in Sources */,
 				5F5995FC1BECF1A100A18238 /* main.m in Sources */,

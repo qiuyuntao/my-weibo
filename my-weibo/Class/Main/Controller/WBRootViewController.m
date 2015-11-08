@@ -55,9 +55,11 @@
 
 - (void) initView {
     PortalViewController *portal = [[PortalViewController alloc] init];
+    portal.tabBarItem.badgeValue = @"1";
     [self initViewController:portal withTitle:@"首页" withImage:@"tabbar_home"];
     
     MessageViewController *message = [[MessageViewController alloc] init];
+    message.tabBarItem.badgeValue = @"new";
     [self initViewController:message withTitle:@"消息" withImage:@"tabbar_message_center"];
     
     DiscoverViewController *discover = [[DiscoverViewController alloc] init];
@@ -82,7 +84,7 @@
     [self.diyTabBar addTabBarWithItem:vc.tabBarItem];
 }
 
-- (void)tabBar:(TabBar *)tabBar didSelectFrom:(int)from to:(int)to {
+- (void)tabBar:(TabBar *)tabBar didSelectFrom:(long)from to:(long)to {
     self.selectedIndex = to;
 }
 

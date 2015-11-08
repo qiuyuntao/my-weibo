@@ -13,7 +13,7 @@
 
 @protocol TabBarDelegate <NSObject>
 
-- (void)tabBar:(TabBar *)tabBar didSelectFrom:(int)from to:(int)to; // 按钮点击代理事件
+- (void)tabBar:(TabBar *)tabBar didSelectFrom:(long)from to:(long)to; // 按钮点击代理事件
 
 @end
 

@@ -30,16 +30,14 @@
     TabBarButton *button = [TabBarButton buttonWithItem:item];
     
     [self addSubview:button];
-    
-    NSLog(@"%f", self.frame.size.width);
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     
     long count = self.subviews.count;
-    
-    for (int i = 0; i < count; i++) {
+
+    for (long i = 0; i < count; i++) {
         TabBarButton *button = self.subviews[i];
         
         CGFloat btnW = self.frame.size.width / count;
