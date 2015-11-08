@@ -60,4 +60,13 @@
     self.badgeButton.badgeValue = badgeValue;
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    CGRect badgeButtonFrame = self.badgeButton.frame;
+    self.badgeButton.frame = CGRectMake(self.frame.size.width * 0.5 + 5,
+                                        badgeButtonFrame.origin.y,
+                                        badgeButtonFrame.size.width,
+                                        badgeButtonFrame.size.height);
+}
+
 @end

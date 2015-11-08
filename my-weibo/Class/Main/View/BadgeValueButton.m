@@ -27,8 +27,8 @@
     if (badgeValue) {
         self.hidden = NO;
         [self setTitle:badgeValue forState:UIControlStateNormal];
-        CGFloat x = self.superview.frame.size.width * 0.5;
-        CGFloat y = 0;
+        CGFloat x = self.frame.origin.x;
+        CGFloat y = self.frame.origin.y;
         CGFloat w = self.currentBackgroundImage.size.width;
         CGFloat h = self.currentBackgroundImage.size.height;
         if (badgeValue.length != 1) {
