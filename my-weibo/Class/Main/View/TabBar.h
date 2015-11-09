@@ -14,6 +14,7 @@
 @protocol TabBarDelegate <NSObject>
 
 - (void)tabBar:(TabBar *)tabBar didSelectFrom:(long)from to:(long)to; // 按钮点击代理事件
+- (void)tapPlusButton; // 点击加号按钮
 
 @end
 

@@ -88,4 +88,8 @@
     self.selectedIndex = to;
 }
 
+- (void)tapPlusButton {
+    NSLog(@"123");
+}
+
 @end
