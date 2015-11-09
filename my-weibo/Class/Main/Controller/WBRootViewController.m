@@ -12,6 +12,7 @@
 #import "DiscoverViewController.h"
 #import "MeViewController.h"
 #import "UIImage+my_weibo.h"
+#import "NavViewController.h"
 #import "TabBar.h" // DIY tabBar
 
 @interface WBRootViewController () <TabBarDelegate>
@@ -79,7 +80,7 @@
     vc.tabBarItem.image = [UIImage imageNamed:imageName];
     vc.tabBarItem.image = [UIImage imageWithOS7:imageName];
     vc.tabBarItem.selectedImage = [[UIImage imageWithOS7:selectImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]; // 图片不做任何渲染
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    NavViewController *nav = [[NavViewController alloc] initWithRootViewController:vc];
     [self addChildViewController:nav];
     [self.diyTabBar addTabBarWithItem:vc.tabBarItem];
 }

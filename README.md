@@ -51,3 +51,22 @@ my-weibo
 NSString *badgeValue = @"123";
 CGFloat width = [badgeValue sizeWithAttributes:@{@"NSFontAttributeName": self.titleLabel.font}].width;
 ```
+
+#### 自定义导航栏 NavViewController
+* 自定义导航栏 取出导航栏以及按钮
+
+```
+UINavigationBar *navBar = [UINavigationBar appearance];
+UIBarButtonItem *item = [UIBarButtonItem appearance];
+    
+``` 
+
+* push 时候取消tabBar的显示
+
+```
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (self.viewControllers.count > 0) viewController.hidesBottomBarWhenPushed = YES;
+    
+    [super pushViewController:viewController animated:YES];
+}
+```

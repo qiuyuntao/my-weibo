@@ -7,6 +7,7 @@
 //
 
 #import "DiscoverViewController.h"
+#import "SearchBar.h"
 
 @interface DiscoverViewController ()
 
@@ -17,6 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self initSearchBar];
+}
+
+- (void)initSearchBar {
+    SearchBar *input = [SearchBar initSearchBar];
+    input.frame = CGRectMake(0, 0, self.view.frame.size.width - 40, 30);
+    self.navigationItem.titleView = input;
 }
 
 - (void)didReceiveMemoryWarning {
