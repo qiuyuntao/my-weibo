@@ -20,9 +20,8 @@
     self.imageView.contentMode = UIViewContentModeCenter;
     
     [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    CGFloat width = [self.titleLabel.text sizeWithAttributes:@{@"NSFontAttributeName": self.titleLabel.font}].width;
-    self.frame = CGRectMake(0, 0, width * 2, 40); // 麻痹 为什么计算出来的宽度不对
-    NSLog(@"%f", self.frame.size.width);
+    CGFloat width = [self.titleLabel.text sizeWithAttributes:@{NSFontAttributeName : self.titleLabel.font}].width;
+    self.frame = CGRectMake(0, 0, width + 20, 40);
     
     self.adjustsImageWhenHighlighted = NO;
     
