@@ -35,6 +35,8 @@
     
     input.clearButtonMode = UITextFieldViewModeAlways;
     
+    input.returnKeyType = UIReturnKeySearch;
+    
     return input;
 }
 

@@ -9,6 +9,7 @@
 #import "PortalViewController.h"
 #import "UIImage+my_weibo.h"
 #import "UIBarButtonItem+my_weibo.h"
+#import "PortalTitleButton.h"
 
 @interface PortalViewController ()
 
@@ -20,7 +21,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self initForTitleButton];
     [self initForBarButtonItem];
+}
+
+- (void)initForTitleButton {
+    PortalTitleButton *btn = [[PortalTitleButton alloc] init];
+    self.navigationItem.titleView = btn;
 }
 
 - (void)initForBarButtonItem {

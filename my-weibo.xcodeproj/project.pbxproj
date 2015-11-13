@@ -222,6 +222,7 @@
 		5FC357F01BEA5AB9006E6124 /* tabbar_profile_selected_os7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FC3572C1BEA5AB9006E6124 /* tabbar_profile_selected_os7@2x.png */; };
 		5FC357F11BEA5AB9006E6124 /* tabbar_slider.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FC3572D1BEA5AB9006E6124 /* tabbar_slider.png */; };
 		5FC357F21BEA5AB9006E6124 /* tabbar_slider@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FC3572E1BEA5AB9006E6124 /* tabbar_slider@2x.png */; };
+		5FCCCB2E1BF63280004EF70A /* PortalTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCCB2D1BF63280004EF70A /* PortalTitleButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -477,6 +478,8 @@
 		5FC3572C1BEA5AB9006E6124 /* tabbar_profile_selected_os7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_profile_selected_os7@2x.png"; sourceTree = "<group>"; };
 		5FC3572D1BEA5AB9006E6124 /* tabbar_slider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_slider.png; sourceTree = "<group>"; };
 		5FC3572E1BEA5AB9006E6124 /* tabbar_slider@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_slider@2x.png"; sourceTree = "<group>"; };
+		5FCCCB2C1BF63280004EF70A /* PortalTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortalTitleButton.h; sourceTree = "<group>"; };
+		5FCCCB2D1BF63280004EF70A /* PortalTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortalTitleButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -701,6 +704,8 @@
 		5F5995F61BECF1A100A18238 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5FCCCB2C1BF63280004EF70A /* PortalTitleButton.h */,
+				5FCCCB2D1BF63280004EF70A /* PortalTitleButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1380,6 +1385,7 @@
 				5F5995FC1BECF1A100A18238 /* main.m in Sources */,
 				5F5995F81BECF1A100A18238 /* WBRootViewController.m in Sources */,
 				5F450BD71BEF7B3B005680F0 /* PlusButton.m in Sources */,
+				5FCCCB2E1BF63280004EF70A /* PortalTitleButton.m in Sources */,
 				5F95FA9F1BF0F6AD00C4EF89 /* SearchBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
