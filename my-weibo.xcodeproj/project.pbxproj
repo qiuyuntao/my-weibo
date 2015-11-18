@@ -10,6 +10,7 @@
 		5F27C21C1BEF259F00248950 /* BadgeValueButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F27C21B1BEF259F00248950 /* BadgeValueButton.m */; };
 		5F2B5A881BEDDFF100CFC5CB /* TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B5A871BEDDFF100CFC5CB /* TabBar.m */; };
 		5F2B5A8B1BEDF63C00CFC5CB /* TabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B5A8A1BEDF63C00CFC5CB /* TabBarButton.m */; };
+		5F2EFD841BFCD4C300BB5DBB /* NewFeaturesPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2EFD831BFCD4C300BB5DBB /* NewFeaturesPageControl.m */; };
 		5F450BD71BEF7B3B005680F0 /* PlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F450BD61BEF7B3B005680F0 /* PlusButton.m */; };
 		5F5995F71BECF1A100A18238 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5995D81BECF1A100A18238 /* DiscoverViewController.m */; };
 		5F5995F81BECF1A100A18238 /* WBRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5995DE1BECF1A100A18238 /* WBRootViewController.m */; };
@@ -19,6 +20,7 @@
 		5F5995FC1BECF1A100A18238 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5995F01BECF1A100A18238 /* main.m */; };
 		5F5995FD1BECF1A100A18238 /* PortalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5995F41BECF1A100A18238 /* PortalViewController.m */; };
 		5F5996011BECF53000A18238 /* UIImage+my_weibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5996001BECF53000A18238 /* UIImage+my_weibo.m */; };
+		5F93D1CE1BFA2B14004588B0 /* NewFeatures.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F93D1CD1BFA2B14004588B0 /* NewFeatures.m */; };
 		5F95FA991BF0E1A000C4EF89 /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F95FA981BF0E1A000C4EF89 /* NavViewController.m */; };
 		5F95FA9C1BF0F45B00C4EF89 /* UIBarButtonItem+my_weibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F95FA9B1BF0F45B00C4EF89 /* UIBarButtonItem+my_weibo.m */; };
 		5F95FA9F1BF0F6AD00C4EF89 /* SearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F95FA9E1BF0F6AD00C4EF89 /* SearchBar.m */; };
@@ -249,6 +251,8 @@
 		5F2B5A871BEDDFF100CFC5CB /* TabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBar.m; sourceTree = "<group>"; };
 		5F2B5A891BEDF63C00CFC5CB /* TabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButton.h; sourceTree = "<group>"; };
 		5F2B5A8A1BEDF63C00CFC5CB /* TabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarButton.m; sourceTree = "<group>"; };
+		5F2EFD821BFCD4C300BB5DBB /* NewFeaturesPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFeaturesPageControl.h; sourceTree = "<group>"; };
+		5F2EFD831BFCD4C300BB5DBB /* NewFeaturesPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFeaturesPageControl.m; sourceTree = "<group>"; };
 		5F450BD51BEF7B3B005680F0 /* PlusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlusButton.h; sourceTree = "<group>"; };
 		5F450BD61BEF7B3B005680F0 /* PlusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlusButton.m; sourceTree = "<group>"; };
 		5F5995D71BECF1A100A18238 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
@@ -266,6 +270,8 @@
 		5F5995F41BECF1A100A18238 /* PortalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortalViewController.m; sourceTree = "<group>"; };
 		5F5995FF1BECF53000A18238 /* UIImage+my_weibo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+my_weibo.h"; sourceTree = "<group>"; };
 		5F5996001BECF53000A18238 /* UIImage+my_weibo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+my_weibo.m"; sourceTree = "<group>"; };
+		5F93D1CC1BFA2B14004588B0 /* NewFeatures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFeatures.h; sourceTree = "<group>"; };
+		5F93D1CD1BFA2B14004588B0 /* NewFeatures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFeatures.m; sourceTree = "<group>"; };
 		5F95FA971BF0E1A000C4EF89 /* NavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavViewController.h; sourceTree = "<group>"; };
 		5F95FA981BF0E1A000C4EF89 /* NavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavViewController.m; sourceTree = "<group>"; };
 		5F95FA9A1BF0F45B00C4EF89 /* UIBarButtonItem+my_weibo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+my_weibo.h"; sourceTree = "<group>"; };
@@ -510,6 +516,7 @@
 		5F5995D41BECF1A100A18238 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				5F93D1C81BFA2AEC004588B0 /* NewFeatures */,
 				5F5995D51BECF1A100A18238 /* Discover */,
 				5F5995DB1BECF1A100A18238 /* Main */,
 				5F5995E11BECF1A100A18238 /* Me */,
@@ -719,6 +726,41 @@
 				5F95FA9B1BF0F45B00C4EF89 /* UIBarButtonItem+my_weibo.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		5F93D1C81BFA2AEC004588B0 /* NewFeatures */ = {
+			isa = PBXGroup;
+			children = (
+				5F93D1C91BFA2AEC004588B0 /* Controller */,
+				5F93D1CA1BFA2AEC004588B0 /* Model */,
+				5F93D1CB1BFA2AEC004588B0 /* View */,
+			);
+			path = NewFeatures;
+			sourceTree = "<group>";
+		};
+		5F93D1C91BFA2AEC004588B0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5F93D1CC1BFA2B14004588B0 /* NewFeatures.h */,
+				5F93D1CD1BFA2B14004588B0 /* NewFeatures.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5F93D1CA1BFA2AEC004588B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5F93D1CB1BFA2AEC004588B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5F2EFD821BFCD4C300BB5DBB /* NewFeaturesPageControl.h */,
+				5F2EFD831BFCD4C300BB5DBB /* NewFeaturesPageControl.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5FC354881BEA4D14006E6124 = {
@@ -1382,8 +1424,10 @@
 				5F27C21C1BEF259F00248950 /* BadgeValueButton.m in Sources */,
 				5F5995F91BECF1A100A18238 /* MeViewController.m in Sources */,
 				5F2B5A8B1BEDF63C00CFC5CB /* TabBarButton.m in Sources */,
+				5F93D1CE1BFA2B14004588B0 /* NewFeatures.m in Sources */,
 				5F5995FC1BECF1A100A18238 /* main.m in Sources */,
 				5F5995F81BECF1A100A18238 /* WBRootViewController.m in Sources */,
+				5F2EFD841BFCD4C300BB5DBB /* NewFeaturesPageControl.m in Sources */,
 				5F450BD71BEF7B3B005680F0 /* PlusButton.m in Sources */,
 				5FCCCB2E1BF63280004EF70A /* PortalTitleButton.m in Sources */,
 				5F95FA9F1BF0F6AD00C4EF89 /* SearchBar.m in Sources */,

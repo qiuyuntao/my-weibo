@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "WBRootViewController.h"
+#import "NewFeatures.h"
 
 @interface AppDelegate ()
 
@@ -21,6 +22,12 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [[WBRootViewController alloc] init];
+    
+    // new features
+    NewFeatures *newFeature = [[NewFeatures alloc] init];
+    self.window.rootViewController = newFeature;
+    
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
