@@ -39,6 +39,7 @@
         }
         UIImageView *view = [[UIImageView alloc] initWithImage:[UIImage imageWithOS7:imageName]];
         view.frame = CGRectMake(i * self.view.frame.size.width, 0, scroll.frame.size.width, scroll.frame.size.height);
+        if (i == 2) [self initForShare:view];
         [scroll addSubview:view];
     }
     scroll.contentSize = CGSizeMake(scroll.frame.size.width * 3, scroll.frame.size.height);
@@ -48,6 +49,38 @@
     scroll.delegate = self;
     
     [self.view addSubview: scroll];
+}
+
+- (void)initForShare:(UIImageView *)view {
+    UIButton *selectdBtn = [[UIButton alloc] init];
+    [selectdBtn setImage:[UIImage imageWithOS7:@"new_feature_share_false"] forState:UIControlStateNormal];
+    [selectdBtn setImage:[UIImage imageWithOS7:@"new_feature_share_true"] forState:UIControlStateSelected];
+    selectdBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);
+    [selectdBtn setTitle:@"分享到微博" forState:UIControlStateNormal];
+    [selectdBtn setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
+    selectdBtn.center = CGPointMake(self.view.frame.size.width * .5, self.view.frame.size.height * .5);
+    selectdBtn.bounds = CGRectMake(0, 0, 200, 50);
+    [selectdBtn addTarget:self action:@selector(checked:) forControlEvents:UIControlEventTouchDown];
+    
+    UIButton *open = [[UIButton alloc] init];
+    [open setBackgroundImage:[UIImage imageWithOS7:@"new_feature_finish_button"] forState:UIControlStateNormal];
+    [open setBackgroundImage:[UIImage imageWithOS7:@"new_feature_finish_button_highlighted"] forState:UIControlStateHighlighted];
+    open.center = CGPointMake(self.view.frame.size.width * .5, self.view.frame.size.height * .6);
+    open.bounds = (CGRect) {CGPointZero, open.currentBackgroundImage.size};
+    [open setTitle:@"开始微博" forState:UIControlStateNormal];
+    [open addTarget:self action:@selector(open) forControlEvents:UIControlEventTouchDown];
+    
+    [view addSubview:selectdBtn];
+    [view addSubview:open];
+}
+
+- (void)checked:(UIButton *)btn {
+//    btn.selected = !btn.selected;
+    NSLog(@"sdf");
+}
+
+- (void)open {
+    NSLog(@"sdf");
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
