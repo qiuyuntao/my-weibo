@@ -23,10 +23,29 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [[WBRootViewController alloc] init];
     
-    // new features
-    NewFeatures *newFeature = [[NewFeatures alloc] init];
-    self.window.rootViewController = newFeature;
+    // 判断是否为新版本
+    NSString *key = @"CFBundleVersion";
     
+    // 取出沙盒中的版本号
+    NSUserDefaults *defaults = [[NSUserDefaults alloc] init];
+    NSString *lastVersion = [defaults stringForKey:key];
+    
+    // 获取到当前的版本号
+    NSString *currentVersion = [NSBundle mainBundle].infoDictionary[key];
+    
+    NSLog(@"currentVersion = %@, lastVersion = %@", currentVersion, lastVersion);
+    
+    if ([lastVersion isEqualToString:currentVersion]) { // 版本号相同，则不是最新的版本
+        self.window.rootViewController = [[WBRootViewController alloc] init];
+        [defaults setObject:currentVersion forKey:key];
+        [defaults synchronize];
+    } else {
+        // new features
+        NewFeatures *newFeature = [[NewFeatures alloc] init];
+        self.window.rootViewController = newFeature;
+    }
+    
+        NSLog(@"currentVersion = %@, lastVersion = %@", currentVersion, [defaults stringForKey:key]);
     
     [self.window makeKeyAndVisible];
     return YES;

@@ -7,12 +7,12 @@
 //
 
 #import "NewFeatures.h"
-#import "NewFeaturesPageControl.h"
+#import "WBRootViewController.h"
 #import "UIImage+my_weibo.h"
 
 @interface NewFeatures () <UIScrollViewDelegate>
 
-@property (nonatomic, weak)NewFeaturesPageControl *pageControl;
+@property (nonatomic, weak)UIPageControl *pageControl;
 
 @end
 
@@ -35,7 +35,6 @@
         NSString *imageName = [NSString stringWithFormat:@"new_feature_%d", i + 1];
         if (self.view.frame.size.height >= 568) {
             imageName = [imageName stringByAppendingString:@"-568h"];
-            NSLog(@"%@", imageName);
         }
         UIImageView *view = [[UIImageView alloc] initWithImage:[UIImage imageWithOS7:imageName]];
         view.frame = CGRectMake(i * self.view.frame.size.width, 0, scroll.frame.size.width, scroll.frame.size.height);
@@ -47,7 +46,7 @@
     scroll.pagingEnabled = YES;
     scroll.showsHorizontalScrollIndicator = NO;
     scroll.delegate = self;
-    
+
     [self.view addSubview: scroll];
 }
 
@@ -70,17 +69,17 @@
     [open setTitle:@"开始微博" forState:UIControlStateNormal];
     [open addTarget:self action:@selector(open) forControlEvents:UIControlEventTouchDown];
     
+    view.userInteractionEnabled = YES;
     [view addSubview:selectdBtn];
     [view addSubview:open];
 }
 
 - (void)checked:(UIButton *)btn {
-//    btn.selected = !btn.selected;
-    NSLog(@"sdf");
+    btn.selected = !btn.selected;
 }
 
 - (void)open {
-    NSLog(@"sdf");
+    self.view.window.rootViewController = [[WBRootViewController alloc] init];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -92,7 +91,7 @@
 }
 
 - (void)initForPageControl {
-    NewFeaturesPageControl *pageControl = [[NewFeaturesPageControl alloc] init];
+    UIPageControl *pageControl = [[UIPageControl alloc] init];
     pageControl.numberOfPages = 3;
     pageControl.currentPage = 0;
     pageControl.frame = CGRectMake(0, self.view.frame.size.height - 50, self.view.frame.size.width, 30);
