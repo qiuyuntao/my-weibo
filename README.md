@@ -70,3 +70,68 @@ UIBarButtonItem *item = [UIBarButtonItem appearance];
     [super pushViewController:viewController animated:YES];
 }
 ```
+
+#### 数据相关
+
+* 讲数据对象存储为数据字典
+```
+{
+    "access_token" = "2.00fzxwTC0Dslm666b918bfa5vjkRBC";
+    "expires_in" = 157679999;
+    "remind_in" = 157679999;
+    uid = 2274833051;
+}
+```
+
+```
+// 声明成员变量
+#import <Foundation/Foundation.h>
+
+@interface OAuthAccount : NSObject <NSObject>
+
+@property (nonatomic, assign) NSString *access_token;
+@property (nonatomic, assign) long long expires_in;
+@property (nonatomic, assign) long long remind_in;
+@property (nonatomic, assign) long long uid;
+
++ (instancetype)accoutWithDict:(NSDictionary *)dict;
+- (instancetype)initWithDict:(NSDictionary *)dict;
+
+@end
+```
+
+```
+// 在对于的.m文件中实现相应的方法，进行赋值
+// json里的数据必须一一对于头文件里创建的数据的变量名
++ (instancetype)accoutWithDict:(NSDictionary *)dict {
+    return [[self alloc] initWithDict:dict];
+}
+
+- (instancetype)initWithDict:(NSDictionary *)dict {
+    self = [super init];
+    
+    [self setValuesForKeysWithDictionary:dict];
+    
+    return self;
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

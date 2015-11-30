@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "WBRootViewController.h"
 #import "NewFeatures.h"
+#import "OAuthViewController.h"
+#import "OAuthAccount.h"
 
 @interface AppDelegate ()
 
@@ -23,29 +25,35 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [[WBRootViewController alloc] init];
     
-    // 判断是否为新版本
-    NSString *key = @"CFBundleVersion";
+    // 判断是否登录过
+    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *file = [doc stringByAppendingPathComponent:@"account.data"];
+    OAuthAccount *account = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
     
-    // 取出沙盒中的版本号
-    NSUserDefaults *defaults = [[NSUserDefaults alloc] init];
-    NSString *lastVersion = [defaults stringForKey:key];
-    
-    // 获取到当前的版本号
-    NSString *currentVersion = [NSBundle mainBundle].infoDictionary[key];
-    
-    NSLog(@"currentVersion = %@, lastVersion = %@", currentVersion, lastVersion);
-    
-    if ([lastVersion isEqualToString:currentVersion]) { // 版本号相同，则不是最新的版本
-        self.window.rootViewController = [[WBRootViewController alloc] init];
-        [defaults setObject:currentVersion forKey:key];
-        [defaults synchronize];
+    NSLog(@"%@", account.access_token);
+    if (account) {
+        // 判断是否为新版本
+        NSString *key = @"CFBundleVersion";
+        
+        // 取出沙盒中的版本号
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *lastVersion = [defaults stringForKey:key];
+        
+        // 获取到当前的版本号
+        NSString *currentVersion = [NSBundle mainBundle].infoDictionary[key];
+        
+        if ([lastVersion isEqualToString:currentVersion]) { // 版本号相同，则不是最新的版本
+            self.window.rootViewController = [[WBRootViewController alloc] init];
+        } else {
+            // new features
+            NewFeatures *newFeature = [[NewFeatures alloc] init];
+            self.window.rootViewController = newFeature;
+            [defaults setObject:currentVersion forKey:key];
+            [defaults synchronize];
+        }
     } else {
-        // new features
-        NewFeatures *newFeature = [[NewFeatures alloc] init];
-        self.window.rootViewController = newFeature;
+        self.window.rootViewController = [[OAuthViewController alloc] init];
     }
-    
-        NSLog(@"currentVersion = %@, lastVersion = %@", currentVersion, [defaults stringForKey:key]);
     
     [self.window makeKeyAndVisible];
     return YES;

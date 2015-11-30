@@ -10,6 +10,8 @@
 #import "UIImage+my_weibo.h"
 #import "UIBarButtonItem+my_weibo.h"
 #import "PortalTitleButton.h"
+#import "AFNetworking.h"
+#import "OAuthAccount.h"
 
 @interface PortalViewController ()
 
@@ -23,6 +25,25 @@
     
     [self initForTitleButton];
     [self initForBarButtonItem];
+    
+    [self getWBData];
+}
+
+- (void)getWBData {
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    
+//    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+//    NSString *file = [doc stringByAppendingPathComponent:@"account.data"];
+//    OAuthAccount *account = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
+//    NSLog(@"%@", account);
+//    NSDictionary *parameters = @{
+//                                 @"access_token": @""};
+//    
+//    [manager GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+//        NSLog(@"%@", responseObject);
+//    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+//        NSLog(@"%@", error);
+//    }];
 }
 
 - (void)initForTitleButton {

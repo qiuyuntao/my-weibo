@@ -47,6 +47,7 @@
     scroll.showsHorizontalScrollIndicator = NO;
     scroll.delegate = self;
 
+
     [self.view addSubview: scroll];
 }
 
@@ -59,6 +60,7 @@
     [selectdBtn setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
     selectdBtn.center = CGPointMake(self.view.frame.size.width * .5, self.view.frame.size.height * .5);
     selectdBtn.bounds = CGRectMake(0, 0, 200, 50);
+    selectdBtn.selected = YES;
     [selectdBtn addTarget:self action:@selector(checked:) forControlEvents:UIControlEventTouchDown];
     
     UIButton *open = [[UIButton alloc] init];
