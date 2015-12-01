@@ -30,7 +30,6 @@
     NSString *file = [doc stringByAppendingPathComponent:@"account.data"];
     OAuthAccount *account = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
     
-    NSLog(@"%@", account.access_token);
     if (account) {
         // 判断是否为新版本
         NSString *key = @"CFBundleVersion";

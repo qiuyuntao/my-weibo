@@ -10,7 +10,7 @@
 
 @interface OAuthAccount : NSObject <NSObject>
 
-@property (nonatomic, assign) NSString *access_token;
+@property (nonatomic, copy) NSString *access_token;
 @property (nonatomic, assign) long long expires_in;
 @property (nonatomic, assign) long long remind_in;
 @property (nonatomic, assign) long long uid;

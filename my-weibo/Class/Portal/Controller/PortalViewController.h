@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PortalViewController : UIViewController
+@interface PortalViewController : UITableViewController
 
 @end
