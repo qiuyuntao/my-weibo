@@ -44,6 +44,15 @@ my-weibo
 }
 ```
 
+* 加载url图片
+	* [引入SDWebImage](https://github.com/rs/SDWebImage) 
+	* 它会自动的启动多线程来加载图片，以及cache
+
+	```
+	#import "UIImageView+WebCache.h"
+	[cell.imageView sd_setImageWithURL:[NSURL URLWithString:iconUrl]];
+	```
+
 #### 计算大小
 * 计算字体占据大小
 
