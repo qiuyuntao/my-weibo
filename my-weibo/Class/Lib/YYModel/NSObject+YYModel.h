@@ -74,8 +74,6 @@
  @return A new instance created from the json, or nil if an error occurs.
  */
 + (instancetype)yy_modelWithJSON:(id)json;
-+ (NSArray *)yy_modelArrayWithJSON:(id)json;
-
 
 /**
  Creates and returns a new instance of the receiver from a key-value dictionary.

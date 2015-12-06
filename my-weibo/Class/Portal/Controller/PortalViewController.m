@@ -47,7 +47,7 @@
     
     [manager GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
-        NSArray *statusArr = [WBStatus yy_modelArrayWithJSON:responseObject[@"statuses"]];
+        NSArray *statusArr = [NSArray yy_modelArrayWithClass:[WBStatus class] json:responseObject[@"statuses"]];
         NSMutableArray *arr = [NSMutableArray array];
         
         for (WBStatus *status in statusArr) {
