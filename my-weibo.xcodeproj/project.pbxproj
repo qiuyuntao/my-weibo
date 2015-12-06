@@ -20,6 +20,12 @@
 		5F27C21C1BEF259F00248950 /* BadgeValueButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F27C21B1BEF259F00248950 /* BadgeValueButton.m */; };
 		5F2B5A881BEDDFF100CFC5CB /* TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B5A871BEDDFF100CFC5CB /* TabBar.m */; };
 		5F2B5A8B1BEDF63C00CFC5CB /* TabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B5A8A1BEDF63C00CFC5CB /* TabBarButton.m */; };
+		5F3678161C145481009F4748 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3678121C145481009F4748 /* NSObject+YYModel.m */; };
+		5F3678171C145481009F4748 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3678141C145481009F4748 /* YYClassInfo.m */; };
+		5F36781A1C1454FD009F4748 /* WBStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3678191C1454FD009F4748 /* WBStatus.m */; };
+		5F36781D1C14550D009F4748 /* WBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F36781C1C14550D009F4748 /* WBUser.m */; };
+		5F3678201C146EAE009F4748 /* PortalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F36781F1C146EAE009F4748 /* PortalTableViewCell.m */; };
+		5F3678231C147EDB009F4748 /* WBStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3678221C147EDB009F4748 /* WBStatusFrame.m */; };
 		5F450BD71BEF7B3B005680F0 /* PlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F450BD61BEF7B3B005680F0 /* PlusButton.m */; };
 		5F5995F71BECF1A100A18238 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5995D81BECF1A100A18238 /* DiscoverViewController.m */; };
 		5F5995F81BECF1A100A18238 /* WBRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5995DE1BECF1A100A18238 /* WBRootViewController.m */; };
@@ -298,6 +304,19 @@
 		5F2B5A871BEDDFF100CFC5CB /* TabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBar.m; sourceTree = "<group>"; };
 		5F2B5A891BEDF63C00CFC5CB /* TabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButton.h; sourceTree = "<group>"; };
 		5F2B5A8A1BEDF63C00CFC5CB /* TabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarButton.m; sourceTree = "<group>"; };
+		5F3678111C145481009F4748 /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
+		5F3678121C145481009F4748 /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
+		5F3678131C145481009F4748 /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
+		5F3678141C145481009F4748 /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
+		5F3678151C145481009F4748 /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
+		5F3678181C1454FD009F4748 /* WBStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBStatus.h; sourceTree = "<group>"; };
+		5F3678191C1454FD009F4748 /* WBStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBStatus.m; sourceTree = "<group>"; };
+		5F36781B1C14550D009F4748 /* WBUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBUser.h; sourceTree = "<group>"; };
+		5F36781C1C14550D009F4748 /* WBUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBUser.m; sourceTree = "<group>"; };
+		5F36781E1C146EAE009F4748 /* PortalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortalTableViewCell.h; sourceTree = "<group>"; };
+		5F36781F1C146EAE009F4748 /* PortalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortalTableViewCell.m; sourceTree = "<group>"; };
+		5F3678211C147EDB009F4748 /* WBStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBStatusFrame.h; sourceTree = "<group>"; };
+		5F3678221C147EDB009F4748 /* WBStatusFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBStatusFrame.m; sourceTree = "<group>"; };
 		5F450BD51BEF7B3B005680F0 /* PlusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlusButton.h; sourceTree = "<group>"; };
 		5F450BD61BEF7B3B005680F0 /* PlusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlusButton.m; sourceTree = "<group>"; };
 		5F5995D71BECF1A100A18238 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
@@ -596,6 +615,7 @@
 		5F240D4B1C0492BC0083DE34 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				5F3678101C145481009F4748 /* YYModel */,
 				5FB6F2F41C0DF44300438EC2 /* SDWebImage */,
 				5F240D4C1C0492BC0083DE34 /* AFNetworking */,
 			);
@@ -626,6 +646,18 @@
 				5F240D5F1C0492BC0083DE34 /* AFURLSessionManager.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		5F3678101C145481009F4748 /* YYModel */ = {
+			isa = PBXGroup;
+			children = (
+				5F3678111C145481009F4748 /* NSObject+YYModel.h */,
+				5F3678121C145481009F4748 /* NSObject+YYModel.m */,
+				5F3678131C145481009F4748 /* YYClassInfo.h */,
+				5F3678141C145481009F4748 /* YYClassInfo.m */,
+				5F3678151C145481009F4748 /* YYModel.h */,
+			);
+			path = YYModel;
 			sourceTree = "<group>";
 		};
 		5F5995D41BECF1A100A18238 /* Class */ = {
@@ -821,6 +853,12 @@
 		5F5995F51BECF1A100A18238 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5F3678181C1454FD009F4748 /* WBStatus.h */,
+				5F3678191C1454FD009F4748 /* WBStatus.m */,
+				5F36781B1C14550D009F4748 /* WBUser.h */,
+				5F36781C1C14550D009F4748 /* WBUser.m */,
+				5F3678211C147EDB009F4748 /* WBStatusFrame.h */,
+				5F3678221C147EDB009F4748 /* WBStatusFrame.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -830,6 +868,8 @@
 			children = (
 				5FCCCB2C1BF63280004EF70A /* PortalTitleButton.h */,
 				5FCCCB2D1BF63280004EF70A /* PortalTitleButton.m */,
+				5F36781E1C146EAE009F4748 /* PortalTableViewCell.h */,
+				5F36781F1C146EAE009F4748 /* PortalTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1629,7 +1669,9 @@
 				5F5995F91BECF1A100A18238 /* MeViewController.m in Sources */,
 				5F240D621C0492BC0083DE34 /* AFHTTPSessionManager.m in Sources */,
 				5FB6F3241C0DF44300438EC2 /* UIImageView+WebCache.m in Sources */,
+				5F3678201C146EAE009F4748 /* PortalTableViewCell.m in Sources */,
 				5FB6F31D1C0DF44300438EC2 /* SDWebImageManager.m in Sources */,
+				5F3678231C147EDB009F4748 /* WBStatusFrame.m in Sources */,
 				5F2B5A8B1BEDF63C00CFC5CB /* TabBarButton.m in Sources */,
 				5F93D1CE1BFA2B14004588B0 /* NewFeatures.m in Sources */,
 				5F240D651C0492BC0083DE34 /* AFURLConnectionOperation.m in Sources */,
@@ -1637,13 +1679,17 @@
 				5FB6F3161C0DF44300438EC2 /* MKAnnotationView+WebCache.m in Sources */,
 				5F240D681C0492BC0083DE34 /* AFURLSessionManager.m in Sources */,
 				5F240D671C0492BC0083DE34 /* AFURLResponseSerialization.m in Sources */,
+				5F36781A1C1454FD009F4748 /* WBStatus.m in Sources */,
 				5FACABF21C035B3B009E38A6 /* OAuthViewController.m in Sources */,
 				5FB6F3211C0DF44300438EC2 /* UIImage+MultiFormat.m in Sources */,
+				5F3678161C145481009F4748 /* NSObject+YYModel.m in Sources */,
 				5FB6F3221C0DF44300438EC2 /* UIImage+WebP.m in Sources */,
 				5FB6F31F1C0DF44300438EC2 /* UIButton+WebCache.m in Sources */,
 				5F5995FC1BECF1A100A18238 /* main.m in Sources */,
 				5F5995F81BECF1A100A18238 /* WBRootViewController.m in Sources */,
 				5F450BD71BEF7B3B005680F0 /* PlusButton.m in Sources */,
+				5F36781D1C14550D009F4748 /* WBUser.m in Sources */,
+				5F3678171C145481009F4748 /* YYClassInfo.m in Sources */,
 				5FCCCB2E1BF63280004EF70A /* PortalTitleButton.m in Sources */,
 				5F240D631C0492BC0083DE34 /* AFNetworkReachabilityManager.m in Sources */,
 				5F95FA9F1BF0F6AD00C4EF89 /* SearchBar.m in Sources */,

@@ -58,7 +58,7 @@ my-weibo
 
 ```
 NSString *badgeValue = @"123";
-CGFloat width = [badgeValue sizeWithAttributes:@{@"NSFontAttributeName": self.titleLabel.font}].width;
+CGFloat width = [badgeValue sizeWithAttributes:@{@NSFontAttributeName: self.titleLabel.font}].width;
 ```
 
 #### 自定义导航栏 NavViewController
