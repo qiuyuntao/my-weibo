@@ -96,4 +96,10 @@
      return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    WBStatusFrame *frame = self.statusFrame[indexPath.row];
+    
+    return frame.cellHeight;
+}
+
 @end

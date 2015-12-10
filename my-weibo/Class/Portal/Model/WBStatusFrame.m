@@ -20,20 +20,40 @@
     CGFloat cellW = [UIScreen mainScreen].bounds.size.width;
     
     CGFloat topViewW= cellW;
+    CGFloat topViewH = 0;
     CGFloat topViewX = 0;
     CGFloat topViewY = 0;
     
+    // 头像
     CGFloat iconViewWH = 35;
     CGFloat iconViewX = StatusCellBorder;
     CGFloat iconViewY = StatusCellBorder;
     _iconViewF = CGRectMake(iconViewX, iconViewY, iconViewWH, iconViewWH);
     
+    // 昵称
     CGSize nameLabelSize = [status.user.name sizeWithAttributes:@{NSFontAttributeName: StatusNameFont}];
     CGFloat nameLabelX = iconViewWH + StatusCellBorder * 2;
-    CGFloat nameLabelY = 0;
+    CGFloat nameLabelY = StatusCellBorder;
     _nameLabelF = (CGRect){{nameLabelX, nameLabelY}, nameLabelSize};
     
-    _topViewF = CGRectMake(topViewX, topViewY, topViewW, topViewW);
+    // 时间
+    CGSize timeLabelSize = [status.created_at sizeWithAttributes:@{NSFontAttributeName: StatusTimeFont}];
+    CGFloat timeLabelX = nameLabelX;
+    CGFloat timeLabelY = nameLabelSize.height + StatusCellBorder;
+    _timeLabelF = (CGRect){{timeLabelX, timeLabelY}, timeLabelSize};
+    
+    // 正文
+    CGFloat contentLabelW = cellW - 2 * StatusCellBorder;
+    CGFloat contentLabelX = StatusCellBorder;
+    CGFloat contentLabelY = iconViewWH + StatusCellBorder * 2;
+    CGSize contentLabelSize = [status.text boundingRectWithSize:CGSizeMake(contentLabelW, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: StatusTimeFont} context:nil].size;
+//    CGSize contentLabelSize = [status.text sizeWithFont:StatusContentFont constrainedToSize:CGSizeMake(contentLabelW, MAXFLOAT)];
+    _contentLabelF = (CGRect){{contentLabelX, contentLabelY}, contentLabelSize};
+    
+    topViewH = CGRectGetMaxY(_contentLabelF) + StatusCellBorder;
+    _topViewF = CGRectMake(topViewX, topViewY, topViewW, topViewH);
+    
+    _cellHeight = topViewH;
     
 //    @property (nonatomic, assign, readonly) CGRect vipViewF;
 //    @property (nonatomic, assign, readonly) CGRect photoViewF;

@@ -16,6 +16,7 @@
 @property (nonatomic, copy) NSString *idstr; // 用户id
 @property (nonatomic, assign) int reposts_count; // 微博转发数
 @property (nonatomic, assign) int comments_count; // 微博评论数
+@property (nonatomic, copy) NSString *created_at; // 创建时间
 @property (nonatomic, strong) WBUser *user; // 微博作者
 
 

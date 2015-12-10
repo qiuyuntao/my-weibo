@@ -73,6 +73,12 @@
     
     self.nameLabel.frame = statusFrame.nameLabelF;
     [self.nameLabel setText:user.name];
+    
+    self.timeLabel.frame = statusFrame.timeLabelF;
+    [self.timeLabel setText:status.created_at];
+    
+    self.contentLabel.frame = statusFrame.contentLabelF;
+    [self.contentLabel setText:status.text];
 }
 
 - (void)initOriginalSubviews {
@@ -105,7 +111,8 @@
     
     // 时间
     UILabel *timeLabel = [[UILabel alloc] init];
-    [self.contentView addSubview:timeLabel];
+    timeLabel.font = StatusTimeFont;
+    [self.topView addSubview:timeLabel];
     self.timeLabel = timeLabel;
     
     // 来源
@@ -115,6 +122,8 @@
     
     // 正文
     UILabel *contentLabel = [[UILabel alloc] init];
+    contentLabel.numberOfLines = 0;
+    contentLabel.font = StatusContentFont;
     [self.contentView addSubview:contentLabel];
     self.contentLabel = contentLabel;
 }
