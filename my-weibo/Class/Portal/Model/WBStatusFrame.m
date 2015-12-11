@@ -46,7 +46,7 @@
     CGFloat contentLabelW = cellW - 2 * StatusCellBorder;
     CGFloat contentLabelX = StatusCellBorder;
     CGFloat contentLabelY = iconViewWH + StatusCellBorder * 2;
-    CGSize contentLabelSize = [status.text boundingRectWithSize:CGSizeMake(contentLabelW, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: StatusTimeFont} context:nil].size;
+    CGSize contentLabelSize = [status.text boundingRectWithSize:CGSizeMake(contentLabelW, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: StatusContentFont   } context:nil].size;
 //    CGSize contentLabelSize = [status.text sizeWithFont:StatusContentFont constrainedToSize:CGSizeMake(contentLabelW, MAXFLOAT)];
     _contentLabelF = (CGRect){{contentLabelX, contentLabelY}, contentLabelSize};
     
