@@ -30,6 +30,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self initForTitleButton];
     [self initForBarButtonItem];
     
@@ -46,7 +48,6 @@
                                  @"access_token": account.access_token};
     
     [manager GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        
         NSArray *statusArr = [NSArray yy_modelArrayWithClass:[WBStatus class] json:responseObject[@"statuses"]];
         NSMutableArray *arr = [NSMutableArray array];
         

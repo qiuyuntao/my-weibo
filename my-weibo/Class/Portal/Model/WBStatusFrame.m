@@ -16,7 +16,7 @@
 
 -(void)setStatus:(WBStatus *)status {
     _status = status;
-    
+    WBStatus *retweetStatus = _status.retweeted_status;
     CGFloat cellW = [UIScreen mainScreen].bounds.size.width;
     
     CGFloat topViewW= cellW;
@@ -25,7 +25,7 @@
     CGFloat topViewY = 0;
     
     // 头像
-    CGFloat iconViewWH = 35;
+    CGFloat iconViewWH = 34;
     CGFloat iconViewX = StatusCellBorder;
     CGFloat iconViewY = StatusCellBorder;
     _iconViewF = CGRectMake(iconViewX, iconViewY, iconViewWH, iconViewWH);
@@ -47,20 +47,59 @@
     CGFloat contentLabelX = StatusCellBorder;
     CGFloat contentLabelY = iconViewWH + StatusCellBorder * 2;
     CGSize contentLabelSize = [status.text boundingRectWithSize:CGSizeMake(contentLabelW, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: StatusContentFont   } context:nil].size;
-//    CGSize contentLabelSize = [status.text sizeWithFont:StatusContentFont constrainedToSize:CGSizeMake(contentLabelW, MAXFLOAT)];
     _contentLabelF = (CGRect){{contentLabelX, contentLabelY}, contentLabelSize};
     
-    topViewH = CGRectGetMaxY(_contentLabelF) + StatusCellBorder;
+    // 图片
+    _photoViewF = CGRectMake(iconViewY, CGRectGetMaxY(_contentLabelF) + StatusCellBorder, 100, 100);
+    
+    if (status.thumbnail_pic) {
+        topViewH = CGRectGetMaxY(_photoViewF) + StatusCellBorder;
+    } else {
+        topViewH = CGRectGetMaxY(_contentLabelF) + StatusCellBorder;
+    }
+    
+    // 如果存在转发的微博
+    if (status.retweeted_status) {
+        CGFloat retweetViewX = 0;
+        CGFloat retweetViewY = topViewH;
+        CGFloat retweetViewW = cellW;
+        CGFloat retweetViewH = 0;
+        
+        // 昵称
+        NSString *retweetName = [NSString stringWithFormat:@"@%@", retweetStatus.user.name];
+        CGFloat retweetNameX = StatusCellBorder;
+        CGFloat retweetNameY = StatusCellBorder;
+        CGSize retweetNameSize = [retweetName sizeWithAttributes:@{NSFontAttributeName: StatusNameFont}];
+        _retweetNameLabelF = (CGRect){{retweetNameX, retweetNameY}, retweetNameSize};
+        
+        // 正文
+        CGFloat contentLabelW = retweetViewW - 2 * StatusCellBorder;
+        CGFloat retweetContentLabelX = StatusCellBorder;
+        CGFloat retweetContentLabelY = CGRectGetMaxY(_retweetNameLabelF) + StatusCellBorder;
+        CGSize retweetContentLabelSize = [retweetStatus.text boundingRectWithSize:CGSizeMake(contentLabelW, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: StatusContentFont} context:nil].size;
+        _retweetContentLabelF = (CGRect){{retweetContentLabelX, retweetContentLabelY}, retweetContentLabelSize};
+
+        // 图片
+        _retweetPhotoViewF = CGRectMake(StatusCellBorder, CGRectGetMaxY(_retweetContentLabelF) + StatusCellBorder, 100, 100);
+        
+        if (retweetStatus.thumbnail_pic) {
+            retweetViewH = CGRectGetMaxY(_retweetPhotoViewF) + 10;
+        } else {
+            retweetViewH = CGRectGetMaxY(_retweetContentLabelF) + 10;
+        }
+    
+        _retweetViewF = CGRectMake(retweetViewX, retweetViewY, retweetViewW, retweetViewH);
+        topViewH = CGRectGetMaxY(_retweetViewF) + StatusCellBorder;
+    } else {
+    
+    }
+    
     _topViewF = CGRectMake(topViewX, topViewY, topViewW, topViewH);
     
-    _cellHeight = topViewH;
+    // statusBar
+    _statusToolbarF = CGRectMake(0, CGRectGetMaxY(_topViewF), cellW, 36);
     
-//    @property (nonatomic, assign, readonly) CGRect vipViewF;
-//    @property (nonatomic, assign, readonly) CGRect photoViewF;
-//    @property (nonatomic, assign, readonly) CGRect nameLabelF;
-//    @property (nonatomic, assign, readonly) CGRect timeLabelF;
-//    @property (nonatomic, assign, readonly) CGRect sourceLabelF;
-//    @property (nonatomic, assign, readonly) CGRect contentLabelF;
+    _cellHeight = topViewH + _statusToolbarF.size.height + 10;
 }
 
 @end

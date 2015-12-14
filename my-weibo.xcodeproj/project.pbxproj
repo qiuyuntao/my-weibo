@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F19BC621C1D9FB600689A61 /* NSDate+my_weibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F19BC611C1D9FB600689A61 /* NSDate+my_weibo.m */; };
 		5F240D601C0492BC0083DE34 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F240D4E1C0492BC0083DE34 /* AFHTTPRequestOperation.m */; };
 		5F240D611C0492BC0083DE34 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F240D501C0492BC0083DE34 /* AFHTTPRequestOperationManager.m */; };
 		5F240D621C0492BC0083DE34 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F240D521C0492BC0083DE34 /* AFHTTPSessionManager.m */; };
@@ -277,6 +278,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F19BC601C1D9FB600689A61 /* NSDate+my_weibo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+my_weibo.h"; sourceTree = "<group>"; };
+		5F19BC611C1D9FB600689A61 /* NSDate+my_weibo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+my_weibo.m"; sourceTree = "<group>"; };
 		5F240D4D1C0492BC0083DE34 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		5F240D4E1C0492BC0083DE34 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		5F240D4F1C0492BC0083DE34 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -877,6 +880,8 @@
 		5F5995FE1BECF51300A18238 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				5F19BC601C1D9FB600689A61 /* NSDate+my_weibo.h */,
+				5F19BC611C1D9FB600689A61 /* NSDate+my_weibo.m */,
 				5F5995FF1BECF53000A18238 /* UIImage+my_weibo.h */,
 				5F5996001BECF53000A18238 /* UIImage+my_weibo.m */,
 				5F95FA9A1BF0F45B00C4EF89 /* UIBarButtonItem+my_weibo.h */,
@@ -997,8 +1002,8 @@
 			isa = PBXGroup;
 			children = (
 				5FC354931BEA4D14006E6124 /* my-weibo */,
-				5FC354A71BEA4D14006E6124 /* my-weiboTests */,
 				5FC354B21BEA4D14006E6124 /* my-weiboUITests */,
+				5FC354A71BEA4D14006E6124 /* my-weiboTests */,
 				5FC354921BEA4D14006E6124 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -1659,6 +1664,7 @@
 				5FB6F3231C0DF44300438EC2 /* UIImageView+HighlightedWebCache.m in Sources */,
 				5FB6F31E1C0DF44300438EC2 /* SDWebImagePrefetcher.m in Sources */,
 				5FB6F31C1C0DF44300438EC2 /* SDWebImageDownloaderOperation.m in Sources */,
+				5F19BC621C1D9FB600689A61 /* NSDate+my_weibo.m in Sources */,
 				5F95FA9C1BF0F45B00C4EF89 /* UIBarButtonItem+my_weibo.m in Sources */,
 				5FB6F31B1C0DF44300438EC2 /* SDWebImageDownloader.m in Sources */,
 				5FB6F3171C0DF44300438EC2 /* NSData+ImageContentType.m in Sources */,
