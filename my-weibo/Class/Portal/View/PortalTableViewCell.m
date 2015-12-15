@@ -10,6 +10,7 @@
 #import "WBStatusFrame.h"
 #import "WBStatus.h"
 #import "WBUser.h"
+#import "StatusBarView.h"
 #import "UIImageView+WebCache.h"
 #import "UIImage+my_weibo.h"
 
@@ -29,7 +30,7 @@
 @property (nonatomic, weak) UILabel *retweetNameLabel; // 转发微博昵称
 @property (nonatomic, weak) UILabel *retweetContentLabel; // 转发微博正文
 @property (nonatomic, weak) UIImageView *retweetPhotoView; // 转发微博配图
-@property (nonatomic, weak) UIImageView *statusToolbar; // 转发微博工具条
+@property (nonatomic, weak) UIView *statusToolbar; // 转发微博工具条
 
 @end
 
@@ -209,10 +210,9 @@
 
 - (void)initToolBar {
     // 工具条
-    UIImageView *statusToolbar = [[UIImageView alloc] init];
-    [self.contentView addSubview:statusToolbar];
-    statusToolbar.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1];
-    self.statusToolbar = statusToolbar;
+    StatusBarView *statueBar = [[StatusBarView alloc] init];
+    [self.contentView addSubview:statueBar];
+    self.statusToolbar = statueBar;
 }
 
 - (void)setFrame:(CGRect)frame {

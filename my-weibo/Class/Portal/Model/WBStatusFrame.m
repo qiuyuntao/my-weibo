@@ -89,7 +89,7 @@
         }
     
         _retweetViewF = CGRectMake(retweetViewX, retweetViewY, retweetViewW, retweetViewH);
-        topViewH = CGRectGetMaxY(_retweetViewF) + StatusCellBorder;
+        topViewH = CGRectGetMaxY(_retweetViewF);
     } else {
     
     }
