@@ -13,6 +13,7 @@
 #import "StatusBarView.h"
 #import "UIImageView+WebCache.h"
 #import "UIImage+my_weibo.h"
+#import "StatusBarView.h"
 
 @interface PortalTableViewCell()
 
@@ -30,7 +31,7 @@
 @property (nonatomic, weak) UILabel *retweetNameLabel; // 转发微博昵称
 @property (nonatomic, weak) UILabel *retweetContentLabel; // 转发微博正文
 @property (nonatomic, weak) UIImageView *retweetPhotoView; // 转发微博配图
-@property (nonatomic, weak) UIView *statusToolbar; // 转发微博工具条
+@property (nonatomic, weak) StatusBarView *statusToolbar; // 转发微博工具条
 
 @end
 
@@ -127,6 +128,7 @@
 
 - (void)setDataForStatusBar {
     self.statusToolbar.frame = self.statusFrame.statusToolbarF;
+    self.statusToolbar.status = self.statusFrame.status;
 }
 
 - (void)initOriginalSubviews {

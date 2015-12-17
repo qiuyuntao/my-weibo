@@ -8,6 +8,7 @@
 
 #import "StatusBarView.h"
 #import "UIImage+my_weibo.h"
+#import "WBStatus.h"
 
 @interface StatusBarView()
 
@@ -29,6 +30,33 @@
     self.attitudeBtn = [self btnWithTitle:@"赞" image:@"timeline_icon_unlike"];
     
     return self;
+}
+
+- (void)setStatus:(WBStatus *)status {
+    _status = status;
+
+    [self btnWithCount:self.reweetBtn originTitle:@"转发" count:status.reposts_count];
+    [self btnWithCount:self.commentBtn originTitle:@"评论" count:status.comments_count];
+    [self btnWithCount:self.attitudeBtn originTitle:@"赞" count:status.attitudes_count];
+}
+
+- (void)btnWithCount:(UIButton *)btn originTitle:(NSString *)originTitle count:(int)count {
+    if (count != 0) {
+        NSString *title = @"";
+        if (count < 10000) {
+            title = [NSString stringWithFormat:@"%d", count];
+        } else {
+            int x = count / 10000;
+            if (count - x * 10000 > 1000) {
+                title = [NSString stringWithFormat:@"%d.%d万", x, (count - x * 10000) / 1000];
+            } else {
+                title = [NSString stringWithFormat:@"%d万", x];
+            }
+        }
+        [btn setTitle:title forState:UIControlStateNormal];
+    } else {
+        [btn setTitle:originTitle forState:UIControlStateNormal];
+    }
 }
 
 - (UIButton *)btnWithTitle:(NSString *)title image:(NSString *)imageName {
