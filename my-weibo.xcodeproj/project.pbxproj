@@ -107,6 +107,7 @@
 		5F28E19D1C2069AB00E43B94 /* timeline_retweet_background_os7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F28E1481C2069AB00E43B94 /* timeline_retweet_background_os7@2x.png */; };
 		5F2B5A881BEDDFF100CFC5CB /* TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B5A871BEDDFF100CFC5CB /* TabBar.m */; };
 		5F2B5A8B1BEDF63C00CFC5CB /* TabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B5A8A1BEDF63C00CFC5CB /* TabBarButton.m */; };
+		5F2D30E41C26EFCD00D7DAD0 /* WBRetweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2D30E31C26EFCD00D7DAD0 /* WBRetweet.m */; };
 		5F3678161C145481009F4748 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3678121C145481009F4748 /* NSObject+YYModel.m */; };
 		5F3678171C145481009F4748 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3678141C145481009F4748 /* YYClassInfo.m */; };
 		5F36781A1C1454FD009F4748 /* WBStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3678191C1454FD009F4748 /* WBStatus.m */; };
@@ -122,6 +123,7 @@
 		5F5995FC1BECF1A100A18238 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5995F01BECF1A100A18238 /* main.m */; };
 		5F5995FD1BECF1A100A18238 /* PortalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5995F41BECF1A100A18238 /* PortalViewController.m */; };
 		5F5996011BECF53000A18238 /* UIImage+my_weibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5996001BECF53000A18238 /* UIImage+my_weibo.m */; };
+		5F7F4BE61C26F6510065A34F /* WBTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F4BE51C26F6510065A34F /* WBTopView.m */; };
 		5F93D1CE1BFA2B14004588B0 /* NewFeatures.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F93D1CD1BFA2B14004588B0 /* NewFeatures.m */; };
 		5F95FA991BF0E1A000C4EF89 /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F95FA981BF0E1A000C4EF89 /* NavViewController.m */; };
 		5F95FA9C1BF0F45B00C4EF89 /* UIBarButtonItem+my_weibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F95FA9B1BF0F45B00C4EF89 /* UIBarButtonItem+my_weibo.m */; };
@@ -480,6 +482,8 @@
 		5F2B5A871BEDDFF100CFC5CB /* TabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBar.m; sourceTree = "<group>"; };
 		5F2B5A891BEDF63C00CFC5CB /* TabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButton.h; sourceTree = "<group>"; };
 		5F2B5A8A1BEDF63C00CFC5CB /* TabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarButton.m; sourceTree = "<group>"; };
+		5F2D30E21C26EFCD00D7DAD0 /* WBRetweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBRetweet.h; sourceTree = "<group>"; };
+		5F2D30E31C26EFCD00D7DAD0 /* WBRetweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBRetweet.m; sourceTree = "<group>"; };
 		5F3678111C145481009F4748 /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
 		5F3678121C145481009F4748 /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
 		5F3678131C145481009F4748 /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
@@ -510,6 +514,8 @@
 		5F5995F41BECF1A100A18238 /* PortalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortalViewController.m; sourceTree = "<group>"; };
 		5F5995FF1BECF53000A18238 /* UIImage+my_weibo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+my_weibo.h"; sourceTree = "<group>"; };
 		5F5996001BECF53000A18238 /* UIImage+my_weibo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+my_weibo.m"; sourceTree = "<group>"; };
+		5F7F4BE41C26F6510065A34F /* WBTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBTopView.h; sourceTree = "<group>"; };
+		5F7F4BE51C26F6510065A34F /* WBTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBTopView.m; sourceTree = "<group>"; };
 		5F93D1CC1BFA2B14004588B0 /* NewFeatures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFeatures.h; sourceTree = "<group>"; };
 		5F93D1CD1BFA2B14004588B0 /* NewFeatures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFeatures.m; sourceTree = "<group>"; };
 		5F95FA971BF0E1A000C4EF89 /* NavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavViewController.h; sourceTree = "<group>"; };
@@ -1411,6 +1417,10 @@
 				5FCCCB2D1BF63280004EF70A /* PortalTitleButton.m */,
 				5F36781E1C146EAE009F4748 /* PortalTableViewCell.h */,
 				5F36781F1C146EAE009F4748 /* PortalTableViewCell.m */,
+				5F2D30E21C26EFCD00D7DAD0 /* WBRetweet.h */,
+				5F2D30E31C26EFCD00D7DAD0 /* WBRetweet.m */,
+				5F7F4BE41C26F6510065A34F /* WBTopView.h */,
+				5F7F4BE51C26F6510065A34F /* WBTopView.m */,
 				5F28E0CE1C20607F00E43B94 /* StatusBarView.h */,
 				5F28E0CF1C20607F00E43B94 /* StatusBarView.m */,
 			);
@@ -2305,6 +2315,7 @@
 				5FB6F31D1C0DF44300438EC2 /* SDWebImageManager.m in Sources */,
 				5F3678231C147EDB009F4748 /* WBStatusFrame.m in Sources */,
 				5F2B5A8B1BEDF63C00CFC5CB /* TabBarButton.m in Sources */,
+				5F7F4BE61C26F6510065A34F /* WBTopView.m in Sources */,
 				5F93D1CE1BFA2B14004588B0 /* NewFeatures.m in Sources */,
 				5F240D651C0492BC0083DE34 /* AFURLConnectionOperation.m in Sources */,
 				5F240D661C0492BC0083DE34 /* AFURLRequestSerialization.m in Sources */,
@@ -2316,6 +2327,7 @@
 				5FACABF21C035B3B009E38A6 /* OAuthViewController.m in Sources */,
 				5FB6F3211C0DF44300438EC2 /* UIImage+MultiFormat.m in Sources */,
 				5F3678161C145481009F4748 /* NSObject+YYModel.m in Sources */,
+				5F2D30E41C26EFCD00D7DAD0 /* WBRetweet.m in Sources */,
 				5FB6F3221C0DF44300438EC2 /* UIImage+WebP.m in Sources */,
 				5FB6F31F1C0DF44300438EC2 /* UIButton+WebCache.m in Sources */,
 				5F5995FC1BECF1A100A18238 /* main.m in Sources */,

@@ -91,6 +91,7 @@
     
     for (int i = 0; i < 2; i++) {
         UIImageView *divideView = [[UIImageView alloc] init];
+        divideView.highlighted = NO;
         divideView.frame = CGRectMake(width * (i + 1) + i + 1, 1, 1, self.frame.size.height - 1);
         divideView.image = [UIImage imageWithOS7:@"timeline_card_bottom_line"];
         [self addSubview:divideView];
