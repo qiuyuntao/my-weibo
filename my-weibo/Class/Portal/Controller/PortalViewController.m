@@ -21,33 +21,56 @@
 
 @interface PortalViewController ()
 
-@property (nonatomic, strong) NSArray *statusFrame;
+@property (nonatomic, strong) NSMutableArray *statusFrame;
 
 @end
 
 @implementation PortalViewController
 
+- (NSMutableArray *)statusFrame
+{
+    if (_statusFrame == nil) {
+        _statusFrame = [NSMutableArray array];
+    }
+    return _statusFrame;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self initRefresh];
     self.tableView.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self initForTitleButton];
     [self initForBarButtonItem];
     
-    [self getWBData];
 }
 
-- (void)getWBData {
+- (void) initRefresh {
+    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+    [refresh addTarget:self action:@selector(refreshData:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refresh];
+    
+    [refresh beginRefreshing];
+    [self refreshData:refresh];
+}
+
+- (void)refreshData:(UIRefreshControl *)refresh {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     NSString *file = [doc stringByAppendingPathComponent:@"account.data"];
     OAuthAccount *account = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
-    NSDictionary *parameters = @{
-                                 @"access_token": account.access_token};
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    parameters[@"access_token"] = account.access_token;
+    parameters[@"amount"] = @5;
+    
+    if (self.statusFrame.count) {
+        WBStatusFrame *statusFrame = self.statusFrame[0];
+        parameters[@"since_id"] = statusFrame.status.idstr;
+    }
     
     [manager GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
         NSArray *statusArr = [NSArray yy_modelArrayWithClass:[WBStatus class] json:responseObject[@"statuses"]];
         NSMutableArray *arr = [NSMutableArray array];
         
@@ -57,9 +80,16 @@
             [arr addObject:statusFrame];
         }
         
-        self.statusFrame = arr;
+        NSMutableArray *tempArray = [NSMutableArray array];
+        // 添加statusFrameArray的所有元素 添加到 tempArray中
+        [tempArray addObjectsFromArray:arr];
+        // 添加self.statusFrames的所有元素 添加到 tempArray中
+        [tempArray addObjectsFromArray:self.statusFrame];
+        self.statusFrame = tempArray;
         
         [self.tableView reloadData];
+
+        [refresh endRefreshing];
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         NSLog(@"%@", error);
     }];
