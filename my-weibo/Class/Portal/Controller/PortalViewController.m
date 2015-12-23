@@ -88,10 +88,38 @@
         self.statusFrame = tempArray;
         
         [self.tableView reloadData];
-
+        
+        [self showNewWBCount:arr.count];
         [refresh endRefreshing];
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         NSLog(@"%@", error);
+    }];
+}
+
+- (void)showNewWBCount:(long)count {
+    UIButton *showBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 34, self.view.frame.size.width, 30)];
+    [showBtn setBackgroundImage:[UIImage resizeImage:@"timeline_new_status_background"] forState:UIControlStateNormal];
+    showBtn.userInteractionEnabled = NO;
+    NSString *text = @"";
+    if (count == 0) {
+        text = @"没有新消息";
+    } else {
+        text = [NSString stringWithFormat:@"共有%ld条新消息", count];
+    }
+    [showBtn setTitle:text forState:UIControlStateNormal];
+    showBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
+    showBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [showBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    [self.navigationController.view insertSubview:showBtn belowSubview:self.navigationController.navigationBar];
+    
+    [UIView animateWithDuration:0.7 animations:^{
+        showBtn.transform = CGAffineTransformMakeTranslation(0, showBtn.frame.size.height + 2);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.7 delay:1 options:(UIViewAnimationOptionCurveLinear) animations:^{
+            showBtn.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished) {
+            [showBtn removeFromSuperview];
+        }];
     }];
 }
 
