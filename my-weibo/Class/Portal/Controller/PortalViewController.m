@@ -68,8 +68,10 @@
     
     [manager GET:@"https://api.weibo.com/2/users/show.json" parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         WBUser *user = [WBUser yy_modelWithDictionary:responseObject];
-        [self.titleBtn setTitle:user.name forState:UIControlStateNormal];
-
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.titleBtn setTitle:user.name forState:UIControlStateNormal];
+        });
+        
         OAuthAccount *accout_1 = [OAuthAccountTool account];
         accout_1.name = user.name;
         [OAuthAccountTool saveAccount:accout_1];

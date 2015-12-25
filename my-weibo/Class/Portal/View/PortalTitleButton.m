@@ -28,11 +28,9 @@
 }
 
 - (void)setTitle:(NSString *)title forState:(UIControlState)state {
-//    NSLog(@"%@", title);
     [super setTitle:title forState:state];
     CGFloat width = [self.titleLabel.text sizeWithAttributes:@{NSFontAttributeName : self.titleLabel.font}].width;
     self.frame = CGRectMake(0, 0, width + 20, 40);
-//    NSLog(@"%lf %lf %lf %lf", self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
 }
 
 - (void)titleClick {
