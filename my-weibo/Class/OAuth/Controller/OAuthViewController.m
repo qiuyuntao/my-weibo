@@ -9,6 +9,7 @@
 #import "OAuthViewController.h"
 #import "AFNetworking.h"
 #import "OAuthAccount.h"
+#import "OAuthAccountTool.h"
 #import "WBRootViewController.h"
 
 @interface OAuthViewController () <UIWebViewDelegate>
@@ -60,10 +61,7 @@
     
     [manager POST:@"https://api.weibo.com/oauth2/access_token" parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         OAuthAccount *account = [OAuthAccount accoutWithDict:responseObject];
-        
-        NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-        NSString *file = [doc stringByAppendingPathComponent:@"account.data"];
-        [NSKeyedArchiver archiveRootObject:account toFile:file];
+        [OAuthAccountTool saveAccount:account];
         
         self.view.window.rootViewController = [[WBRootViewController alloc] init];
         

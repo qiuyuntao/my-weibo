@@ -18,10 +18,12 @@
 #import "WBUser.h"
 #import "YYModel.h"
 #import "PortalTableViewCell.h"
+#import "OAuthAccountTool.h"
 
 @interface PortalViewController ()
 
 @property (nonatomic, strong) NSMutableArray *statusFrame;
+@property (nonatomic, weak) PortalTitleButton *titleBtn;
 
 @end
 
@@ -42,7 +44,38 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self initForTitleButton];
     [self initForBarButtonItem];
+    [self getUserInfo];
     
+}
+
+- (void)getUserInfo {
+    self.titleBtn.frame = CGRectMake(0, 0, 0, 40);
+    OAuthAccount *accout = [OAuthAccountTool account];
+    NSString *name;
+    if (accout.name) {
+        name = accout.name;
+    } else {
+        name = @"首页";
+    }
+    [self.titleBtn setTitle:name forState:UIControlStateNormal];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *file = [doc stringByAppendingPathComponent:@"account.data"];
+    OAuthAccount *account = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    parameters[@"access_token"] = account.access_token;
+    parameters[@"uid"] = @(account.uid);
+    
+    [manager GET:@"https://api.weibo.com/2/users/show.json" parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        WBUser *user = [WBUser yy_modelWithDictionary:responseObject];
+        [self.titleBtn setTitle:user.name forState:UIControlStateNormal];
+
+        OAuthAccount *accout_1 = [OAuthAccountTool account];
+        accout_1.name = user.name;
+        [OAuthAccountTool saveAccount:accout_1];
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        NSLog(@"%@", error);
+    }];
 }
 
 - (void) initRefresh {
@@ -113,7 +146,7 @@
     [self.navigationController.view insertSubview:showBtn belowSubview:self.navigationController.navigationBar];
     
     [UIView animateWithDuration:0.7 animations:^{
-        showBtn.transform = CGAffineTransformMakeTranslation(0, showBtn.frame.size.height + 2);
+        showBtn.transform = CGAffineTransformMakeTranslation(0, showBtn.frame.size.height);
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.7 delay:1 options:(UIViewAnimationOptionCurveLinear) animations:^{
             showBtn.transform = CGAffineTransformIdentity;
@@ -126,6 +159,8 @@
 - (void)initForTitleButton {
     PortalTitleButton *btn = [[PortalTitleButton alloc] init];
     self.navigationItem.titleView = btn;
+    [btn setTitle:@"首页" forState:UIControlStateNormal];
+    self.titleBtn = btn;
 }
 
 - (void)initForBarButtonItem {

@@ -128,6 +128,7 @@
 		5F95FA991BF0E1A000C4EF89 /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F95FA981BF0E1A000C4EF89 /* NavViewController.m */; };
 		5F95FA9C1BF0F45B00C4EF89 /* UIBarButtonItem+my_weibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F95FA9B1BF0F45B00C4EF89 /* UIBarButtonItem+my_weibo.m */; };
 		5F95FA9F1BF0F6AD00C4EF89 /* SearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F95FA9E1BF0F6AD00C4EF89 /* SearchBar.m */; };
+		5F9F666B1C2D906500BDCA44 /* OAuthAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F666A1C2D906500BDCA44 /* OAuthAccountTool.m */; };
 		5FACABF21C035B3B009E38A6 /* OAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FACABF11C035B3B009E38A6 /* OAuthViewController.m */; };
 		5FB6F3161C0DF44300438EC2 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB6F2F61C0DF44300438EC2 /* MKAnnotationView+WebCache.m */; };
 		5FB6F3171C0DF44300438EC2 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB6F2F81C0DF44300438EC2 /* NSData+ImageContentType.m */; };
@@ -524,6 +525,8 @@
 		5F95FA9B1BF0F45B00C4EF89 /* UIBarButtonItem+my_weibo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+my_weibo.m"; sourceTree = "<group>"; };
 		5F95FA9D1BF0F6AD00C4EF89 /* SearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchBar.h; sourceTree = "<group>"; };
 		5F95FA9E1BF0F6AD00C4EF89 /* SearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBar.m; sourceTree = "<group>"; };
+		5F9F66691C2D906500BDCA44 /* OAuthAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthAccountTool.h; sourceTree = "<group>"; };
+		5F9F666A1C2D906500BDCA44 /* OAuthAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthAccountTool.m; sourceTree = "<group>"; };
 		5FACABF01C035B3B009E38A6 /* OAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthViewController.h; sourceTree = "<group>"; };
 		5FACABF11C035B3B009E38A6 /* OAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthViewController.m; sourceTree = "<group>"; };
 		5FB6F2F51C0DF44300438EC2 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
@@ -1497,6 +1500,8 @@
 			children = (
 				5F240D691C04AA960083DE34 /* OAuthAccount.h */,
 				5F240D6A1C04AA960083DE34 /* OAuthAccount.m */,
+				5F9F66691C2D906500BDCA44 /* OAuthAccountTool.h */,
+				5F9F666A1C2D906500BDCA44 /* OAuthAccountTool.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2327,6 +2332,7 @@
 				5FACABF21C035B3B009E38A6 /* OAuthViewController.m in Sources */,
 				5FB6F3211C0DF44300438EC2 /* UIImage+MultiFormat.m in Sources */,
 				5F3678161C145481009F4748 /* NSObject+YYModel.m in Sources */,
+				5F9F666B1C2D906500BDCA44 /* OAuthAccountTool.m in Sources */,
 				5F2D30E41C26EFCD00D7DAD0 /* WBRetweet.m in Sources */,
 				5FB6F3221C0DF44300438EC2 /* UIImage+WebP.m in Sources */,
 				5FB6F31F1C0DF44300438EC2 /* UIButton+WebCache.m in Sources */,

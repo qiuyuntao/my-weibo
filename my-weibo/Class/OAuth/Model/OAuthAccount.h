@@ -14,6 +14,7 @@
 @property (nonatomic, assign) long long expires_in;
 @property (nonatomic, assign) long long remind_in;
 @property (nonatomic, assign) long long uid;
+@property (nonatomic, copy) NSString *name;
 
 + (instancetype)accoutWithDict:(NSDictionary *)dict;
 - (instancetype)initWithDict:(NSDictionary *)dict;
