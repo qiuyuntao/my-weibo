@@ -30,7 +30,9 @@
 - (void)setTitle:(NSString *)title forState:(UIControlState)state {
     [super setTitle:title forState:state];
     CGFloat width = [self.titleLabel.text sizeWithAttributes:@{NSFontAttributeName : self.titleLabel.font}].width;
-    self.frame = CGRectMake(0, 0, width + 20, 40);
+    CGRect frame = self.frame;
+    frame.size = CGSizeMake(width + 20, frame.size.height);
+    self.frame = frame;
 }
 
 - (void)titleClick {
