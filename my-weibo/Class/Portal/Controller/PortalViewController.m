@@ -19,11 +19,15 @@
 #import "YYModel.h"
 #import "PortalTableViewCell.h"
 #import "OAuthAccountTool.h"
+#import "MJRefresh.h"
 
 @interface PortalViewController ()
 
 @property (nonatomic, strong) NSMutableArray *statusFrame;
 @property (nonatomic, weak) PortalTitleButton *titleBtn;
+
+@property (nonatomic, weak) MJRefreshHeader *freshHeader;
+@property (nonatomic, weak) MJRefreshFooter *freshFooter;
 
 @end
 
@@ -39,13 +43,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initRefresh];
+//    [self initRefresh];
+    [self initForRefresh];
     self.tableView.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self initForTitleButton];
     [self initForBarButtonItem];
-    [self getUserInfo];
     
+    [self getUserInfo];
+}
+
+- (void)initForRefresh {
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self refreshData:@"top"];
+    }];
+    
+    [self.tableView.mj_header beginRefreshing];
+    
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [self refreshData:@"bottom"];
+    }];
 }
 
 - (void)getUserInfo {
@@ -77,16 +94,7 @@
     }];
 }
 
-- (void) initRefresh {
-    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
-    [refresh addTarget:self action:@selector(refreshData:) forControlEvents:UIControlEventValueChanged];
-    [self.tableView addSubview:refresh];
-    
-    [refresh beginRefreshing];
-    [self refreshData:refresh];
-}
-
-- (void)refreshData:(UIRefreshControl *)refresh {
+- (void)refreshData:(NSString *)verticalDirection {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
@@ -97,8 +105,14 @@
     parameters[@"amount"] = @5;
     
     if (self.statusFrame.count) {
-        WBStatusFrame *statusFrame = self.statusFrame[0];
-        parameters[@"since_id"] = statusFrame.status.idstr;
+        if ([verticalDirection isEqualToString:@"top"]) {
+            WBStatusFrame *statusFrame = self.statusFrame[0];
+            parameters[@"since_id"] = statusFrame.status.idstr;
+        } else {
+            WBStatusFrame *statusFrame = [self.statusFrame lastObject];
+            long long maxId = [statusFrame.status.idstr longLongValue] - 1;
+            parameters[@"max_id"] = @(maxId);
+        }
     }
     
     [manager GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
@@ -111,18 +125,21 @@
             statusFrame.status = status;
             [arr addObject:statusFrame];
         }
-        
         NSMutableArray *tempArray = [NSMutableArray array];
-        // 添加statusFrameArray的所有元素 添加到 tempArray中
-        [tempArray addObjectsFromArray:arr];
-        // 添加self.statusFrames的所有元素 添加到 tempArray中
-        [tempArray addObjectsFromArray:self.statusFrame];
+        
+        if ([verticalDirection isEqualToString:@"top"]) {
+            [tempArray addObjectsFromArray:arr];
+            [tempArray addObjectsFromArray:self.statusFrame];
+            [self showNewWBCount:arr.count];
+        } else {
+            [tempArray addObjectsFromArray:self.statusFrame];
+            [tempArray addObjectsFromArray:arr];
+        }
         self.statusFrame = tempArray;
         
         [self.tableView reloadData];
-        
-        [self showNewWBCount:arr.count];
-        [refresh endRefreshing];
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         NSLog(@"%@", error);
     }];
@@ -193,6 +210,19 @@
     WBStatusFrame *frame = self.statusFrame[indexPath.row];
     
     return frame.cellHeight;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)aScrollView {
+    CGPoint offset = aScrollView.contentOffset; // 当前的位置
+    CGRect bounds = aScrollView.bounds;
+    CGSize size = aScrollView.contentSize; // 当前height
+    UIEdgeInsets inset = aScrollView.contentInset;
+    float y = offset.y + bounds.size.height - inset.bottom;
+    float h = size.height;
+    float reload_distance = 10;
+    if(y > h + reload_distance) {
+        NSLog(@"load more rows");
+    }
 }
 
 @end
