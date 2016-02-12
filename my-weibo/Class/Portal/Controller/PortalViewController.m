@@ -43,7 +43,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self initRefresh];
     [self initForRefresh];
     self.tableView.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
